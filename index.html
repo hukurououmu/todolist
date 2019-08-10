@@ -8,31 +8,38 @@
 </head>
 
 <body>
-    <table id="tasks-list" class="table table-striped text-center mx-auto" style="width: 400px">
-        <div>
-            <thead>
-                <tr>
-                    <th>Todo</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="task in tasks" v-if="!task.isDeleted">
-                    <td>{{ task.text }}</td>
-                    <td>
-                        <div v-on:click="deleteTask(task.id)" class="btn btn-danger">Delete</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input v-model="newTask" class="form-control"></td>
-                    <td>
-                        <div v-on:click="addTask" class="btn btn-success">AddList </div>
-                    </td>
-                </tr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 mx-auto">
+                <table id="tasks-list" class="table table-striped  text-center">
+                    <div>
+                        <thead>
+                            <tr>
+                                <th>Todo</th>
+                                <th></th>
+                            </tr>
+                        </thead>
 
-            </tbody>
+                        <tbody>
+                            <tr v-for="task in tasks" v-if="!task.isDeleted">
+                                <td>{{ task.text }}</td>
+                                <td>
+                                    <div v-on:click="deleteTask(task.id)" class="btn btn-danger">Delete</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input v-model="newTask" class="form-control"></td>
+                                <td>
+                                    <div v-on:click="addTask" class="btn btn-success">AddList </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </div>
+                </table>
+            </div>
         </div>
-    </table>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
