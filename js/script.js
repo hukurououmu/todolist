@@ -3,17 +3,17 @@ let app = new Vue({
     data: {
         tasks: [{
                 id: 0,
-                text: "Sleep",
+                text: "Sample Task",
                 isDeleted: false
             },
             {
                 id: 1,
-                text: "Lunch",
+                text: "Sample Task",
                 isDeleted: false
             },
             {
                 id: 2,
-                text: "Walk",
+                text: "Sample Task",
                 isDeleted: false
             },
         ],
@@ -21,6 +21,9 @@ let app = new Vue({
     },
     methods: {
         addTask: function() {
+            if (!this.newTask.trim()) {
+                return
+            }
             let new_id = this.tasks[this.tasks.length - 1].id + 1;
             this.tasks.push({
                 id: new_id,
